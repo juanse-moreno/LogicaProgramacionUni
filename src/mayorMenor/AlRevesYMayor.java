@@ -1,7 +1,4 @@
-package arreglos;
-
-import mayorMenor.Sc;
-import pruebasxd.Print;
+package mayorMenor;
 
 public class AlRevesYMayor {
 
@@ -16,8 +13,6 @@ public class AlRevesYMayor {
         for (int i = numeros.length - 1; i >= 0; i--) {
             Print.l(numeros[i] + " ");
         }
-        Print.ln(""); // Salto de línea estético
-
 
         int mayor = numeros[0];
         for (int i = 1; i < numeros.length; i++) {
@@ -26,6 +21,6 @@ public class AlRevesYMayor {
             }
         }
 
-        Print.ln("El mayor es: " + mayor);
+        Print.l("\nEl mayor es: " + mayor);
     }
 }
