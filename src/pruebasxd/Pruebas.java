@@ -1,5 +1,7 @@
 package pruebasxd;
 
+import reutilizacion.*;
+
 import javax.swing.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -24,9 +26,9 @@ public class Pruebas {
         Print.println("CÓDIGO 1");
         mostrarTop(top);
 
-        //pruebasxd.Print.println("CÓDIGO 2");
-        //leerNotas(notas);
-        //mostrarResumen(notas);
+        Print.println("CÓDIGO 2");
+        leerNotas(notas);
+        mostrarResumen(notas);
 
         String respuesta = Sc.nextLine("¿Quieres que se muestren las ventanas? (si/no):");
 

@@ -1,5 +1,7 @@
 package mayorMenor;
 
+import reutilizacion.*;
+
 public class AlRevesYMayor {
 
     public static void main(String[] args) {
