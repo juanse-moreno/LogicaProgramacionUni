@@ -1,3 +1,5 @@
+package pruebasxd;
+
 import java.util.Scanner;
 
 public class Sc {
