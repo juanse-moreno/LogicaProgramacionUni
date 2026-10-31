@@ -7,6 +7,10 @@ public class Print{
         return msg;
     }
 
+    public static void println(){
+        System.out.println();
+    }
+
     public static void l(String msg){
         System.out.print(msg);
     }
@@ -15,11 +19,11 @@ public class Print{
         System.out.println(msg);
     }
 
-    public static void println(Object objeto){
+    public static void objectoln(Object objeto){
         System.out.println(objeto);
     }
 
-    public static void printl(Object objeto){
+    public static void objectol(Object objeto) {
         System.out.print(objeto);
     }
 }

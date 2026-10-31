@@ -60,11 +60,11 @@ public class ImagenVentanasXD {
                 }
 
             } else {
-                Print.println("No se pudo interpretar la imagen.");
+                Print.objectoln("No se pudo interpretar la imagen.");
             }
 
         } catch (Exception e) {
-            Print.println("ERROR: " + e.getMessage());
+            Print.objectoln("ERROR: " + e.getMessage());
 
         }
     }

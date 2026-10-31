@@ -16,10 +16,10 @@ public class ArreglosClase1 {
                 "Malteada"
         };
 
-        Print.println("CÓDIGO 1");
+        Print.ln("CÓDIGO 1");
         mostrarTop(top);
 
-        Print.println("CÓDIGO 2");
+        Print.ln("CÓDIGO 2");
         leerNotas(notas);
         mostrarResumen(notas);
 
@@ -32,7 +32,7 @@ public class ArreglosClase1 {
 
         for (int i = 1; i <= top.length; i++) {
 
-            Print.println(i + ". " + top[i - 1]);
+            Print.objectoln(i + ". " + top[i - 1]);
 
         }
 
@@ -67,9 +67,9 @@ public class ArreglosClase1 {
 
         double promedio = suma / notas.length;
 
-        Print.println("Promedio del grupo: " + promedio);
+        Print.ln("Promedio del grupo: " + promedio);
 
-        Print.println("Aprobados: " + aprobados + " de " + notas.length);
+        Print.ln("Aprobados: " + aprobados + " de " + notas.length);
 
     }
 
