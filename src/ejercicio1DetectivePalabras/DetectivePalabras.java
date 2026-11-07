@@ -1,0 +1,99 @@
+package ejercicio1DetectivePalabras;
+
+import java.util.*;
+
+public class DetectivePalabras{
+
+
+    public static void main(String [] args){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de palabras que va a analizar: ");
+        int cantidadPalabras = sc.nextInt();
+        sc.nextLine();
+
+        String [] palabra = new String[cantidadPalabras];
+
+        for (int i = 0; i < cantidadPalabras; i++){
+            System.out.print("Ingrese la palabra " + (i + 1) + ": ");
+            palabra[i] = sc.nextLine();
+        }
+
+
+        int contadorPalindromo = 0;
+
+        System.out.print("Ingrese la palabra que desea buscar: ");
+        String buscado = sc.nextLine();
+
+        int posicion = buscar(palabra, buscado);
+
+        String palabraMayor = palabra[0];
+        int maxVocales = contarVocales(palabra[0]);
+
+        for (int i = 0; i < cantidadPalabras; i++){
+            int vocalesActual = contarVocales(palabra[i]);
+            int vocales = contarVocales(palabra[i]);
+
+            if (esPalindromo(palabra[i])){
+                System.out.println("La palabra " + (i + 1) + ". " + palabra[i] + " tiene " + vocales + " vocales y es palindromo");
+
+                contadorPalindromo ++;
+
+
+            } else {
+                System.out.println("La palabra " + (i + 1) + ". " + palabra[i] + " tiene " + vocales + " vocales y no es palindromo");
+
+            }
+
+            if (vocalesActual > maxVocales){
+                maxVocales = vocalesActual;
+                palabraMayor = palabra[i];
+            }
+
+        }
+        System.out.println("La cantidad de palindromos es: " + contadorPalindromo);
+        System.out.println("La palabra " + buscado + " está en la posicion " + (posicion + 1));
+        System.out.print("La palabra con mayores vocales es: " + palabraMayor);
+
+    }
+
+
+    public static int contarVocales(String palabra) {
+
+        int contador = 0;
+        String minuscula = palabra.toLowerCase();
+
+        for (int i = 0; i < minuscula.length(); i++) {
+            char letra = minuscula.charAt(i);
+
+            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                contador++;
+            }
+        }
+        return contador;
+
+    }
+
+    public static boolean esPalindromo(String palabra){
+        String minuscula = palabra.toLowerCase();
+        boolean palindromo = true;
+
+        for (int i = 0; i < minuscula.length() / 2; i++){
+            if (minuscula.charAt(i) != minuscula.charAt(minuscula.length() - 1 - i)){
+                palindromo = false;
+            }
+        }
+        return palindromo;
+    }
+
+    public static int buscar (String [] palabra, String buscado ){
+        for (int i = 0; i < palabra.length; i++){
+
+            if (palabra[i].equalsIgnoreCase(buscado)){
+                return i;
+            }
+        } return -1;
+    }
+
+
+}
