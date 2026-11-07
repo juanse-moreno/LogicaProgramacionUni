@@ -1,12 +1,8 @@
 package ejercicio1DetectivePalabras;
 
-import reutilizacion.Print;
+import java.util.Scanner;
 
-import java.util.*;
-
-public class DetectivePalabras{
-
-
+public class DetectivePalabras {
     public static void main(String [] args){
 
         Scanner sc = new Scanner(System.in);
@@ -17,17 +13,11 @@ public class DetectivePalabras{
         String [] palabra = new String[cantidadPalabras];
 
         for (int i = 0; i < cantidadPalabras; i++){
-            System.out.print("Ingrese la palabra " + (i + 1) + ": ");
+            System.out.print("Ingrese la palabra: ");
             palabra[i] = sc.nextLine();
         }
 
-
         int contadorPalindromo = 0;
-
-        System.out.print("Ingrese la palabra que desea buscar: ");
-        String buscado = sc.nextLine();
-
-        int posicion = buscar(palabra, buscado);
 
         String palabraMayor = palabra[0];
         int maxVocales = contarVocales(palabra[0]);
@@ -36,33 +26,31 @@ public class DetectivePalabras{
             int vocales = contarVocales(palabra[i]);
 
             if (esPalindromo(palabra[i])){
-                System.out.println("La palabra " + (i + 1) + ". " + palabra[i] + " tiene " + vocales + " vocales y es palindromo");
+                System.out.println("La palabra " + palabra[i] + " tiene " + vocales + " vocales y es palindromo");
 
                 contadorPalindromo ++;
-
-
             } else {
-                System.out.println("La palabra " + (i + 1) + ". " + palabra[i] + " tiene " + vocales + " vocales y no es palindromo");
-
+                System.out.println("La palabra " + palabra[i] + " tiene " + vocales + " vocales y no es palindromo");
             }
-
             if (vocales > maxVocales){
                 maxVocales = vocales;
                 palabraMayor = palabra[i];
             }
-
         }
         System.out.println("La cantidad de palindromos es: " + contadorPalindromo);
         System.out.println("La palabra con mayores vocales es: " + palabraMayor);
+
+        System.out.print("Ingrese la palabra que desea buscar: ");
+        String buscado = sc.nextLine();
+
+        int posicion = buscar(palabra, buscado);
+
         if (posicion == -1){
             System.out.println("La palabra " + buscado + " no está en el arreglo.");
         } else {
             System.out.println("La palabra " + buscado + " está en la posición " + (posicion +1) + "." );
-
         }
-
     }
-
 
     public static int contarVocales(String palabra) {
 
@@ -77,7 +65,6 @@ public class DetectivePalabras{
             }
         }
         return contador;
-
     }
 
     public static boolean esPalindromo(String palabra){
@@ -100,6 +87,4 @@ public class DetectivePalabras{
             }
         } return -1;
     }
-
-
 }
