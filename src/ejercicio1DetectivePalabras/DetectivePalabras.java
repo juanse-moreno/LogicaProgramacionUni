@@ -33,7 +33,6 @@ public class DetectivePalabras{
         int maxVocales = contarVocales(palabra[0]);
 
         for (int i = 0; i < cantidadPalabras; i++){
-            int vocalesActual = contarVocales(palabra[i]);
             int vocales = contarVocales(palabra[i]);
 
             if (esPalindromo(palabra[i])){
@@ -47,8 +46,8 @@ public class DetectivePalabras{
 
             }
 
-            if (vocalesActual > maxVocales){
-                maxVocales = vocalesActual;
+            if (vocales > maxVocales){
+                maxVocales = vocales;
                 palabraMayor = palabra[i];
             }
 
