@@ -1,5 +1,7 @@
 package ejercicio1DetectivePalabras;
 
+import reutilizacion.Print;
+
 import java.util.*;
 
 public class DetectivePalabras{
@@ -52,8 +54,13 @@ public class DetectivePalabras{
 
         }
         System.out.println("La cantidad de palindromos es: " + contadorPalindromo);
-        System.out.println("La palabra " + buscado + " está en la posicion " + (posicion + 1));
-        System.out.print("La palabra con mayores vocales es: " + palabraMayor);
+        System.out.println("La palabra con mayores vocales es: " + palabraMayor);
+        if (posicion == -1){
+            System.out.println("La palabra " + buscado + " no está en el arreglo.");
+        } else {
+            System.out.println("La palabra " + buscado + " está en la posición " + (posicion +1) + "." );
+
+        }
 
     }
 
