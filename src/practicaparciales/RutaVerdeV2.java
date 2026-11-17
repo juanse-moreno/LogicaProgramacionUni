@@ -165,13 +165,19 @@ public class RutaVerdeV2 {
         return texto;
     }
 
+    // Estudiar la implementación de while para/por casos condicionados por diferentes requerimientos o programas
     public static String convertirTextosATexto(String[] arreglo) {
         String texto = "[";
-        for (int i = 0; i < arreglo.length; i++) {
-            texto += arreglo[i];
-            if (i < arreglo.length - 1) {
+        int i = 0;
+        while (i + 1 < arreglo.length) {
+            texto += arreglo[i] + ": " + arreglo[i + 1];
+            if (i + 2 < arreglo.length) {
                 texto += ", ";
             }
+            i += 2;
+        }
+        if (i < arreglo.length) {
+            texto += arreglo[i];
         }
         texto += "]";
         return texto;
