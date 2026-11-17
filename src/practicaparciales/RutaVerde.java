@@ -21,6 +21,7 @@ public class RutaVerde {
         Sc.llenarDecimalesPositivos(valores, "Ingrese el valor pagado por kilogramo del punto");
 
         double totalPagado = calcularTotalPagado(kilos, valores);
+        String totalTexto = Sc.convertirDecimalATexto(totalPagado);
 
         int posicionMayor = buscarPosicionMayor(kilos);
         String nombreMayor = obtenerNombreMayor(nombres, posicionMayor);
@@ -32,7 +33,7 @@ public class RutaVerde {
         String unicosTexto = convertirEnterosATexto(codigosUnicos);
         String combinadoTexto = convertirTextosATexto(combinado);
 
-        String mensaje = generarMensaje(detallePuntos, totalPagado, nombreMayor,
+        String mensaje = generarMensaje(detallePuntos, totalTexto, nombreMayor,
                 unicosTexto, combinadoTexto);
 
         Print.mostrarMensaje(mensaje);
@@ -176,11 +177,11 @@ public class RutaVerde {
         return detalle;
     }
 
-    public static String generarMensaje(String detallePuntos, double totalPagado,
+    public static String generarMensaje(String detallePuntos, String totalTexto,
                                         String nombreMayor, String unicosTexto, String combinadoTexto) {
         String mensaje = "===== RESUMEN DE LA JORNADA - RUTA VERDE S.A.S. =====\n"
                 + detallePuntos
-                + "\nValor total pagado: " + totalPagado
+                + "\nValor total pagado: " + totalTexto
                 + "\nPunto con mayor cantidad de kilogramos: " + nombreMayor
                 + "\nCodigos unicos: " + unicosTexto
                 + "\nNombres y tipos de material alternados: " + combinadoTexto;
