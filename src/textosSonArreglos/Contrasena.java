@@ -7,14 +7,14 @@ public class Contrasena {
         String clave = "Java";
         String intento = Sc.nextLine("Escribe la clave: ");
 
-        Print.ln("Con ==: " + (intento == clave));
-        Print.ln("Con equals: " + (intento.equals(clave)));
-        Print.ln("Con equalsIgnoreCase: " + (intento.equalsIgnoreCase(clave)));
+        Print.imprimirConSalto("Con ==: " + (intento == clave));
+        Print.imprimirConSalto("Con equals: " + (intento.equals(clave)));
+        Print.imprimirConSalto("Con equalsIgnoreCase: " + (intento.equalsIgnoreCase(clave)));
 
         if (intento.equalsIgnoreCase(clave)) {
-            Print.print("Acceso concedido");
+            Print.imprimirTextoYRetornar("Acceso concedido");
         } else {
-            Print.print("Clave incorrecta");
+            Print.imprimirTextoYRetornar("Clave incorrecta");
         }
 
     }

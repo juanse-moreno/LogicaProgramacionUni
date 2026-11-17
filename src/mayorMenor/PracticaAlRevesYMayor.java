@@ -11,9 +11,9 @@ public class PracticaAlRevesYMayor {
             numeros[i] = Sc.nextInt("Ingresa el " + Ordinal.numero(i+1));
         }
 
-        Print.l("Números al revés: ");
+        Print.imprimirSinSalto("Números al revés: ");
         for (int i = numeros.length - 1; i >= 0; i--) {
-            Print.l(numeros[i] + " ");
+            Print.imprimirSinSalto(numeros[i] + " ");
         }
 
         // Método que nos enseñó la profe
@@ -38,7 +38,7 @@ public class PracticaAlRevesYMayor {
         int mayor = numeros[numeros.length - 1];
         */
 
-        Print.l("\nEl mayor es: " + mayor);
+        Print.imprimirSinSalto("\nEl mayor es: " + mayor);
 
     }
 }

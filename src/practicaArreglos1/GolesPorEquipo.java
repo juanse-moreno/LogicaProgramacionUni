@@ -20,19 +20,19 @@ public class GolesPorEquipo {
 
             int total = 0;
 
-            Print.print("Equipo " + (equipo + 1) + ": ");
+            Print.imprimirTextoYRetornar("Equipo " + (equipo + 1) + ": ");
 
             for (int partido = 0; partido < goles[equipo].length; partido++) {
 
-                Print.print(goles[equipo][partido] + " ");
+                Print.imprimirTextoYRetornar(goles[equipo][partido] + " ");
 
                 total += goles[equipo][partido];
             }
 
             double promedio = (double) total / goles[equipo].length;
 
-            Print.ln("-> Total de goles: " + total);
-            Print.ln("Promedio de goles por partido: " + promedio + "\n");
+            Print.imprimirConSalto("-> Total de goles: " + total);
+            Print.imprimirConSalto("Promedio de goles por partido: " + promedio + "\n");
         }
     }
 }

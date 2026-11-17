@@ -19,11 +19,11 @@ public class AsistenciaPorDia {
         int mayor = totales[0];
         int posicionMayor = 0;
 
-        Print.ln("Total de asistentes por día:");
+        Print.imprimirConSalto("Total de asistentes por día:");
 
         for (int dia = 0; dia < totales.length; dia++) {
 
-            Print.ln("El día " + dias[dia] + " asisitieron: " + totales[dia] + " estudiantes.");
+            Print.imprimirConSalto("El día " + dias[dia] + " asisitieron: " + totales[dia] + " estudiantes.");
 
             totalSemana += totales[dia];
 
@@ -33,9 +33,9 @@ public class AsistenciaPorDia {
             }
         }
 
-        Print.ln("\nTotal general de la semana: " + totalSemana);
+        Print.imprimirConSalto("\nTotal general de la semana: " + totalSemana);
 
-        Print.ln("El día con mayor asistencia fue " + dias[posicionMayor] + " con " + mayor + " asistentes.");
+        Print.imprimirConSalto("El día con mayor asistencia fue " + dias[posicionMayor] + " con " + mayor + " asistentes.");
     }
 
     public static int[] totalPorDia(int[][] asistencia) {

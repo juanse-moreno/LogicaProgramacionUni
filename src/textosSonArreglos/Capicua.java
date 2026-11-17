@@ -13,9 +13,9 @@ public class Capicua {
         }
 
         if (esCapicua(datos)){
-            Print.print("El arreglo es capicua");
+            Print.imprimirTextoYRetornar("El arreglo es capicua");
         } else {
-            Print.print("El arreglo no es capicua");
+            Print.imprimirTextoYRetornar("El arreglo no es capicua");
         }
     }
 

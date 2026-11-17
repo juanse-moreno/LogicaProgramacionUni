@@ -13,9 +13,9 @@ public class BuscarCarne {
         int posicion = buscarCarne(carnes, buscado);
 
         if (posicion == -1) {
-            Print.print("El carné " + buscado + " no está registrado.");
+            Print.imprimirTextoYRetornar("El carné " + buscado + " no está registrado.");
         } else {
-            Print.print("El carné " + buscado + " está registrado en la posición " + (posicion + 1) + ".");
+            Print.imprimirTextoYRetornar("El carné " + buscado + " está registrado en la posición " + (posicion + 1) + ".");
         }
     }
 

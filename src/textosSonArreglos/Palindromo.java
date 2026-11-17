@@ -8,9 +8,9 @@ public class Palindromo {
         String palabra = Sc.nextLine("Escriba una palabra: ");
 
         if (esPalindromo(palabra)){
-            Print.print(palabra + " es palíndromo");
+            Print.imprimirTextoYRetornar(palabra + " es palíndromo");
         } else {
-            Print.print(palabra + " no es palíndromo");
+            Print.imprimirTextoYRetornar(palabra + " no es palíndromo");
         }
 
     }

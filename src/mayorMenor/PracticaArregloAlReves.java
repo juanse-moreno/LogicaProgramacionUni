@@ -22,24 +22,24 @@ public class PracticaArregloAlReves {
     public static void mostrarAlReves(int[] numeros){
 
         for (int i = numeros.length - 1; i >= 0; i--) {
-            Print.ln("Posición " + (numeros.length - i) + ": " + numeros[i]);
+            Print.imprimirConSalto("Posición " + (numeros.length - i) + ": " + numeros[i]);
         }
     }
     //Como lo hicimos
     public static void mostrarAlReves2(int[] numeros){
 
-        Print.println();
+        Print.imprimirSaltoLinea();
         for (int i = numeros.length - 1; i >= 0; i--) {
-            Print.ln("Posición " + i + ": " + numeros[i]);
+            Print.imprimirConSalto("Posición " + i + ": " + numeros[i]);
         }
     }
 
     //Como lo propuse creyendo que era así según pensé
     public static void mostrarAlReves3(int[] numeros){
 
-        Print.println();
+        Print.imprimirSaltoLinea();
         for (int i = numeros.length - 1; i >= 0; i--) {
-            Print.ln("Posición " + (i+1) + ": " + numeros[i]);
+            Print.imprimirConSalto("Posición " + (i+1) + ": " + numeros[i]);
         }
     }
 }

@@ -11,9 +11,9 @@ public class AlRevesYMayor {
             numeros[i] = Sc.nextInt("Introduce el número " + (i + 1) + ": ");
         }
 
-        Print.l("Números al revés: ");
+        Print.imprimirSinSalto("Números al revés: ");
         for (int i = numeros.length - 1; i >= 0; i--) {
-            Print.l(numeros[i] + " ");
+            Print.imprimirSinSalto(numeros[i] + " ");
         }
 
         int mayor = numeros[0];
@@ -23,6 +23,6 @@ public class AlRevesYMayor {
             }
         }
 
-        Print.l("\nEl mayor es: " + mayor);
+        Print.imprimirSinSalto("\nEl mayor es: " + mayor);
     }
 }

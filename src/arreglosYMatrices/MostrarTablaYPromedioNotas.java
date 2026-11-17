@@ -15,7 +15,7 @@ public class MostrarTablaYPromedioNotas {
 
         mostrarTabla(nota);
 
-        Print.ln("\nPromedio por evaluaciones");
+        Print.imprimirConSalto("\nPromedio por evaluaciones");
 
         mostrarPromedioColumnas(nota);
     }
@@ -24,17 +24,17 @@ public class MostrarTablaYPromedioNotas {
         for (int fila = 0; fila < notas.length; fila++){
             double suma = 0;
 
-            Print.print("Estudiante " + (fila + 1) + ": ");
+            Print.imprimirTextoYRetornar("Estudiante " + (fila + 1) + ": ");
             //             Estudiante 1:
 
             for (int col = 0; col < notas[fila].length; col++) {
-                Print.print(notas[fila][col] + " ");
+                Print.imprimirTextoYRetornar(notas[fila][col] + " ");
                 suma += notas[fila][col];
             }
 
             double promedio = suma / notas[fila].length;
 
-            Print.ln("Promedio: " + promedio);
+            Print.imprimirConSalto("Promedio: " + promedio);
         }
     }
 

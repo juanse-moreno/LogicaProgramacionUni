@@ -2,28 +2,31 @@ package reutilizacion;
 
 public class Print{
 
-    public static String print(String msg){
+    public static String imprimirTextoYRetornar(String msg){
         System.out.print(msg);
         return msg;
     }
 
-    public static void println(){
+    public static void imprimirSaltoLinea(){
         System.out.println();
     }
 
-    public static void l(String msg){
+    public static void imprimirSinSalto(String msg){
         System.out.print(msg);
     }
 
-    public static void ln(String msg){
+    public static void imprimirConSalto(String msg){
         System.out.println(msg);
     }
 
-    public static void objectoln(Object objeto){
+    public static void imprimirObjetoConSalto(Object objeto){
         System.out.println(objeto);
     }
 
-    public static void objectol(Object objeto) {
+    public static void imprimirObjetoSinSalto(Object objeto) {
         System.out.print(objeto);
+    }
+    public static void mostrarMensaje(String mensaje) {
+        Print.imprimirConSalto(mensaje);
     }
 }

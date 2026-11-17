@@ -12,7 +12,7 @@ public class ContarNota {
 
         int veces = contarNota(notas, valor);
 
-        Print.print("La nota " + valor + " aparece " + veces + " veces.");
+        Print.imprimirTextoYRetornar("La nota " + valor + " aparece " + veces + " veces.");
     }
 
     public static int contarNota(int[] datos, int valor) {

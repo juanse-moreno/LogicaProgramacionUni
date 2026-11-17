@@ -16,9 +16,9 @@ public class BuscarNumero {
         int posicion = buscar (numeros, buscado);
 
         if (posicion == -1){
-            Print.print("El número " + buscado + " no está en el arreglo.");
+            Print.imprimirTextoYRetornar("El número " + buscado + " no está en el arreglo.");
         } else {
-            Print.print("El número " + buscado + " está en la posición " + (posicion +1) + "." );
+            Print.imprimirTextoYRetornar("El número " + buscado + " está en la posición " + (posicion +1) + "." );
 
         }
     }

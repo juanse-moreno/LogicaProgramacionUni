@@ -10,7 +10,7 @@ public class ContarEdades {
 
         int veces = contarVeces(edades, valor);
 
-        Print.print("La edad " + valor + " aparece " + veces + " veces.");
+        Print.imprimirTextoYRetornar("La edad " + valor + " aparece " + veces + " veces.");
     }
 
     public static int contarVeces (int[] datos, int valor){
