@@ -42,6 +42,79 @@ public class Sc {
     public static String nextScan() {
         return sc.nextLine();
     }
+
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    // funcion para validar un entero dentro de un rango (incluyendo extremos)
+    public static double validarDecimalEnRango(String mensaje){
+        double numero = Sc.nextDouble(mensaje);
+        while (numero < -10 || numero > 60){
+            numero = Sc.nextDouble("Lectura invalida. " + mensaje);
+        }
+        return numero;
+    }
+
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    // funcion para validar un entero dentro de un rango (incluyendo extremos)
+    public static int contarMayoresQueDecimal(double [] arreglo, double valor){
+        int contador = 0;
+        for (int i = 0; i < arreglo.length; i++){
+            if (arreglo[i] > valor){
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    public static double calcularPromedioDecimales(double [] arreglo){
+        double suma = 0;
+        for (int i = 0; i < arreglo.length; i++){
+            suma += arreglo[i];
+        }
+        return suma / arreglo.length;
+    }
+
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    public static int contarVeces (int[] arreglo, int numero){
+        int contador = 0;
+
+        for (int i = 0; i < arreglo.length; i++){
+            if (arreglo[i] == numero){
+                contador++;
+            }
+        } return contador;
+    }
+
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    public static int buscarPosicionMayorEntero(int [] arreglo){
+        int mayor = arreglo[0];
+        int posicionMayor = 0;
+        for (int i = 0; i < arreglo.length; i++){
+            if (arreglo[i] > mayor){
+                mayor = arreglo[i];
+                posicionMayor = i;
+            }
+
+        }
+
+        return posicionMayor;
+
+    }
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    public static int buscarPosicionMayorDecimal(double [] arreglo){
+        double mayor = arreglo[0];
+        int posicionMayor = 0;
+        for (int i = 0; i < arreglo.length; i++){
+            if (arreglo[i] > mayor){
+                mayor = arreglo[i];
+                posicionMayor = i;
+            }
+
+        }
+
+        return posicionMayor;
+
+    }
     // Función para validar un entero positivo
     public static int validarEnteroPositivo(String mensaje) {
         int numero = nextInt(mensaje);

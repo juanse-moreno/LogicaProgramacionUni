@@ -8,18 +8,10 @@ public class ContarEdades {
 
         int valor = Sc.nextInt("Qué edad quieres contar?\n");
 
-        int veces = contarVeces(edades, valor);
+        int veces = Sc.contarVeces(edades, valor);
 
         Print.imprimirTextoYRetornar("La edad " + valor + " aparece " + veces + " veces.");
     }
 
-    public static int contarVeces (int[] datos, int valor){
-        int contador = 0;
 
-        for (int i = 0; i < datos.length; i++){
-            if (datos[i] == valor){
-                contador++;
-            }
-        } return contador;
-    }
 }
