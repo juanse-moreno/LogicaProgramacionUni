@@ -45,7 +45,18 @@ public class Sc {
 
     // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
     // funcion para validar un entero dentro de un rango (incluyendo extremos)
-    public static double validarDecimalEnRango(String mensaje){
+    public static int validarEnteroEnRango(String mensaje, int minimo, int maximo) {
+        int numero = nextInt(mensaje);
+        while (numero < minimo || numero > maximo) {
+            Print.imprimirConSalto("Dato invalido. Debe estar entre " + minimo + " y " + maximo + ".");
+            numero = nextInt(mensaje);
+        }
+        return numero;
+    }
+
+    // REUTILIZACIÓN SEGÚN CODIFICACIÓN ÚLTIMO PARCIAL
+    // funcion para validar un decimal dentro de un rango (incluyendo extremos)
+    public static double validarDecimalEnRango(String mensaje, double minimo, double maximo){
         double numero = Sc.nextDouble(mensaje);
         while (numero < -10 || numero > 60){
             numero = Sc.nextDouble("Lectura invalida. " + mensaje);

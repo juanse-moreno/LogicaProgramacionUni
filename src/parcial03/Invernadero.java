@@ -23,7 +23,7 @@ public class Invernadero {
     // La lectura se repite dentro del for: el índice no avanza hasta que sea válida
     public static void llenarTemperaturas(double[] temperaturas){
         for (int i = 0; i < temperaturas.length; i++){
-            temperaturas[i] = Sc.validarDecimalEnRango("Ingrese la temperatura " + (i + 1) + " (entre -10 y 60): ");
+            temperaturas[i] = Sc.validarDecimalEnRango("Ingrese la temperatura " + (i + 1) + " entre -10 y 60): ",-10, 60);
         }
     }
 
