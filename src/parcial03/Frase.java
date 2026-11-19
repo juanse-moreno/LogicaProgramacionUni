@@ -5,7 +5,7 @@ import reutilizacion.*;
 public class Frase {
     public static void main(String [] args){
 
-        String frase = Sc.nextLine("Ingrese una frase");
+        String frase = Sc.nextLine("Ingrese una frase: ");
         int palabras = contarPalabras(frase);
         String primera = obtenerPrimeraPalabra(frase);
         String ultima = obtenerUltimaPalabra(frase);

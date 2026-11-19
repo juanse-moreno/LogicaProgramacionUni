@@ -58,7 +58,7 @@ public class Sc {
     // funcion para validar un decimal dentro de un rango (incluyendo extremos)
     public static double validarDecimalEnRango(String mensaje, double minimo, double maximo){
         double numero = Sc.nextDouble(mensaje);
-        while (numero < -10 || numero > 60){
+        while (numero < minimo || numero > maximo){
             numero = Sc.nextDouble("Lectura invalida. " + mensaje);
         }
         return numero;
