@@ -11,15 +11,36 @@ public class ImagenVentanasXD {
 
     public static void preguntarYMostrar() {
 
+        // MODIFICADO: la pregunta ahora ofrece tres opciones (antes era si/no)
         String respuesta = Sc.nextLine(
-                "¿Mostrar imagenes xD? (si/no):"
+                "¿Qué imagen quieres ver? (1 = primera, 2 = segunda, 0 = ninguna): "
         );
 
-        if (respuesta != null && respuesta.trim().replace("í", "i").replace("Í", "I").equalsIgnoreCase("si")) {
+        // MODIFICADO: ya no se compara con "si", así que se quita el reemplazo de tildes; solo se quitan los espacios
+        String decision = "";
+        if (respuesta != null) {
+            decision = respuesta.trim();
+        }
 
+        // MODIFICADO: ahora se compara con "1" (antes con "si")
+        if (decision.equals("1")) {
+
+            // SIN CAMBIOS en el enlace: la imagen original pasa a ser la opción 1
             mostrarCincoVentanas("https://img.lightshot.app/ug6OtR7vTUmAIaGlc71w9Q.png");
 
+            // MODIFICADO: ahora se compara con "2" (antes con "no")
+        } else if (decision.equals("2")) {
+
+            // SIN CAMBIOS en el enlace: la otra imagen pasa a ser la opción 2
+            mostrarCincoVentanas("https://img.lightshot.app/2mf8TgYtTXOPwmfXrPl6hg.jpg");
+
+            // NUEVO: cualquier valor distinto de 0 avisa que la opción no es válida
+        } else if (!decision.equals("0")) {
+
+            Print.imprimirConSalto("Opcion no valida. No se muestra ninguna imagen.");
+
         }
+        // NUEVO (sin código): con 0 no entra a ningún bloque y no se muestra nada
 
     }
 

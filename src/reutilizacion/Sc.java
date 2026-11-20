@@ -1,4 +1,3 @@
-
 package reutilizacion;
 
 import java.util.Scanner;
@@ -192,6 +191,17 @@ public class Sc {
 
     // FUNCIONES PERSONALES CREADAS Y ADAPTADAS CON LA PRÁCTICA PARA EVITAR USO DE MÉTODOS NATIVOS DE JAVA
     // Y PARA COMPRENDER EL FUNCIONAMIENTO DE ESTOS ÚLTIMOS
+
+    // Para recorrer texto al revés
+    public static String invertir(String mensaje){
+        String texto = "";
+        for (int i = mensaje.length() - 1; i >= 0; i--){
+            texto += mensaje.charAt(i);
+        }
+        return texto;
+    }
+
+
     // Quita los espacios del inicio y del final (equivale a trim)
     public static String quitarEspaciosExtremos(String texto) {
         int inicio = 0;
@@ -306,6 +316,28 @@ public class Sc {
             numero = -numero;
         }
         return numero;
+    }
+
+    // Elimina espacios repetidos entre palabras y conserva uno solo
+    public static String quitarEspaciosRepetidos(String texto) {
+        String limpio = "";
+        boolean espacioAnterior = false;
+
+        for (int i = 0; i < texto.length(); i++) {
+            char caracter = texto.charAt(i);
+
+            if (caracter == ' ') {
+                if (!espacioAnterior) {
+                    limpio += caracter;
+                    espacioAnterior = true;
+                }
+            } else {
+                limpio += caracter;
+                espacioAnterior = false;
+            }
+        }
+
+        return limpio;
     }
 
 }

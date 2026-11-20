@@ -10,6 +10,7 @@ public class SalaCine {
 
         int [][] sala = new int[filas][columnas];
         llenarSala(sala);
+        dibujarSala(sala);
 
         int [] libresPorFila = calcularLibresPorFila(sala);
         int totalOcupados = contarOcupados(sala);
@@ -80,6 +81,22 @@ public class SalaCine {
     public static void mostrarLibresPorFila(int[] libresPorFila){
         for (int i = 0; i < libresPorFila.length; i++){
             Print.imprimirConSalto("Fila " + (i + 1) + ": " + libresPorFila[i] + " asientos libres");
+        }
+    }
+
+    public static void dibujarSala(int[][] sala){
+
+        for (int fila = 0; fila < sala.length; fila++){
+            for (int columna = 0; columna < sala[fila].length; columna++){
+                String simbolo;
+                if(sala[fila][columna] == 1){
+                    simbolo = "X";
+                } else {
+                    simbolo = "L";
+                }
+                Print.imprimirSinSalto(simbolo + " ");
+            }
+            Print.imprimirSaltoLinea();
         }
     }
 

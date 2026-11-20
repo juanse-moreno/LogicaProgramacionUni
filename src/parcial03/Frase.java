@@ -1,24 +1,30 @@
 package parcial03;
 
+import textosSonArreglos.*;
 import reutilizacion.*;
 
 public class Frase {
     public static void main(String [] args){
 
-        String frase = Sc.nextLine("Ingrese una frase: ");
+        String frase = Sc.quitarEspaciosRepetidos(Sc.quitarEspaciosExtremos(Sc.nextLine("Ingrese una frase: ")));
         int palabras = contarPalabras(frase);
         String primera = obtenerPrimeraPalabra(frase);
         String ultima = obtenerUltimaPalabra(frase);
         boolean palindromo = esPalindromo(primera);
         boolean iguales = primera.equalsIgnoreCase((ultima));
 
+
         Print.imprimirConSalto("Cantidad de palabras: " + palabras);
         Print.imprimirConSalto("Primera palabra: " + primera);
         Print.imprimirConSalto("Ultima palabra: " + ultima);
         Print.imprimirConSalto(palindromo ? "La primera palabra es un palíndromo" : "La primera palabra no es un palindromo");
         Print.imprimirConSalto(iguales ? "Primera y última iguales" : "Primera y última diferentes");
+        Print.imprimirConSalto("Cantidad de vocales en: " + frase + " es " + ContarVocales.contarVocales(frase));
 
-        dibujarTriangulo(primera);
+
+        DibujarFigura.dibujarPiramide(primera);
+
+        ImagenVentanasXD.preguntarYMostrar();
     }
 
     public static int contarPalabras(String frase){
@@ -32,6 +38,7 @@ public class Frase {
     }
 
     public static String obtenerPrimeraPalabra(String frase){
+        // con inexof usa posiciones
         String primera = "";
         boolean terminada = false;
         for (int i = 0; i < frase.length(); i++){
@@ -68,15 +75,6 @@ public class Frase {
             }
         }
         return palindromo;
-    }
-
-    public static void dibujarTriangulo(String palabra){
-        for (int fila = 1; fila <= palabra.length(); fila++){
-            for (int asterisco = 1; asterisco <= fila; asterisco++){
-                Print.imprimirSinSalto("*");
-            }
-            Print.imprimirSaltoLinea();
-        }
     }
 
 }
