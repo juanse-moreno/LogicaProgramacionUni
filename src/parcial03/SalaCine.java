@@ -10,7 +10,7 @@ public class SalaCine {
 
         int [][] sala = new int[filas][columnas];
         llenarSala(sala);
-        dibujarSala(sala);
+        // dibujarSala(sala); - Innecesaria xd en cualquier metodo diferente de llenarSala, que recorriera la matriz, solo con poner la decisión ya servía xd
 
         int [] libresPorFila = calcularLibresPorFila(sala);
         int totalOcupados = contarOcupados(sala);
@@ -22,6 +22,7 @@ public class SalaCine {
         Print.imprimirConSalto("Fila con más asientos libres: " + (filasMasLibres + 1));
         Print.imprimirConSalto(hayFilaLlena ? "Hay al menos una fila llena" : "No hay filas llenas");
 
+
     }
 
     public static void llenarSala(int[][] sala){
@@ -32,15 +33,25 @@ public class SalaCine {
             }
         }
     }
+
     public static int[] calcularLibresPorFila(int[][] sala){
         int[] libresPorFila = new int[sala.length];
         for (int fila = 0; fila < sala.length; fila++){
+            String simbolo;
             int libres = 0;
             for (int columna = 0; columna < sala[fila].length; columna++){
+
                 if (sala[fila][columna] == 0){
                     libres ++;
                 }
+                if(sala[fila][columna] == 1){
+                    simbolo = "X";
+                } else {
+                    simbolo = "L";
+                }
+                Print.imprimirSinSalto(simbolo + " ");
             }
+            Print.imprimirSaltoLinea();
             libresPorFila[fila] = libres;
         }
         return libresPorFila;
@@ -84,6 +95,8 @@ public class SalaCine {
         }
     }
 
+
+    /*
     public static void dibujarSala(int[][] sala){
 
         for (int fila = 0; fila < sala.length; fila++){
@@ -99,5 +112,5 @@ public class SalaCine {
             Print.imprimirSaltoLinea();
         }
     }
-
+*/
 }

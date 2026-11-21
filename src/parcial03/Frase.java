@@ -13,13 +13,21 @@ public class Frase {
         boolean palindromo = esPalindromo(primera);
         boolean iguales = primera.equalsIgnoreCase((ultima));
 
+        int contador = 0;
+
+        for (String letra : frase.split("")) { // aquí hubiera utilizado la práctica del .split y por ahí derecho el for each xD
+            // contador += letra.equals("a") || letra.equals("e") || letra.equals("i") || letra.equals("o") || letra.equals("u") ? 1 : 0;
+             contador += "aeiou".contains(letra) ? 1 : 0; //Estudiar el .contains, aún no lo domino
+        }
+
 
         Print.imprimirConSalto("Cantidad de palabras: " + palabras);
         Print.imprimirConSalto("Primera palabra: " + primera);
         Print.imprimirConSalto("Ultima palabra: " + ultima);
         Print.imprimirConSalto(palindromo ? "La primera palabra es un palíndromo" : "La primera palabra no es un palindromo");
         Print.imprimirConSalto(iguales ? "Primera y última iguales" : "Primera y última diferentes");
-        Print.imprimirConSalto("Cantidad de vocales en: " + frase + " es " + ContarVocales.contarVocales(frase));
+        Print.imprimirConSalto("Cantidad de vocales en: " + frase + " es " + contador);
+
 
 
         DibujarFigura.dibujarPiramide(primera);
@@ -33,12 +41,14 @@ public class Frase {
             if (frase.charAt(i) == ' '){
                 palabras ++;
             }
+
         }
         return palabras;
     }
 
     public static String obtenerPrimeraPalabra(String frase){
         // con inexof usa posiciones
+        int contador = 0;
         String primera = "";
         boolean terminada = false;
         for (int i = 0; i < frase.length(); i++){
