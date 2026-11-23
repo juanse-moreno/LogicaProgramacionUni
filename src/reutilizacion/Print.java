@@ -1,5 +1,6 @@
 package reutilizacion;
 
+// [Ref #4] Print se mantiene como utilidad 100% static: no guarda estado, por eso no necesita constructor ni atributos
 public class Print{
 
     public static String imprimirTextoYRetornar(String msg){

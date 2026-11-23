@@ -6,23 +6,101 @@ public class Sc {
 
     public static Scanner sc = new Scanner(System.in);
 
-    public static int nextInt(String mensaje) {
-        String texto = quitarEspaciosExtremos(nextLine(mensaje));
+    // [Ref #2] Atributo de instancia: permite usar Sc como objeto (new Sc()) sin perder los metodos static
+    private Scanner lector;
+
+    // [Ref #2] Constructor por defecto: comparte el Scanner estatico para no crear dos lectores sobre System.in
+    public Sc() {
+        this.lector = sc;
+    }
+
+    // [Ref #2] Constructor alterno: permite inyectar otro Scanner (por ejemplo, para pruebas)
+    public Sc(Scanner lector) {
+        this.lector = lector;
+    }
+
+    public Scanner getLector() {
+        return lector;
+    }
+
+    public void setLector(Scanner lector) {
+        this.lector = lector;
+    }
+
+    // [Ref #3] Metodos de instancia (nombres distintos porque Java no permite static e instancia con la misma firma)
+    public String leerLinea(String mensaje) {
+        Print.imprimirSinSalto(mensaje);
+        return lector.nextLine();
+    }
+
+    public int leerEntero(String mensaje) {
+        String texto = leerLinea(mensaje).trim();
         while (!esEnteroValido(texto)) {
             Print.imprimirConSalto("Dato invalido. Debe ingresar un numero entero.");
-            texto = quitarEspaciosExtremos(nextLine(mensaje));
+            texto = leerLinea(mensaje).trim();
         }
-        int numero = convertirTextoAEntero(texto);
+        return Integer.parseInt(texto);
+    }
+
+    public double leerDecimal(String mensaje) {
+        String texto = leerLinea(mensaje).trim();
+        while (!esDecimalValido(texto)) {
+            Print.imprimirConSalto("Dato invalido. Debe ingresar un numero decimal (ejemplo: 12.5 o 12,5).");
+            texto = leerLinea(mensaje).trim();
+        }
+        return Double.parseDouble(texto.replace(',', '.'));
+    }
+
+    public int leerEnteroPositivo(String mensaje) {
+        int numero = leerEntero(mensaje);
+        while (numero <= 0) {
+            Print.imprimirConSalto("Dato invalido. Debe ser un entero positivo.");
+            numero = leerEntero(mensaje);
+        }
+        return numero;
+    }
+
+    public double leerDecimalPositivo(String mensaje) {
+        double numero = leerDecimal(mensaje);
+        while (numero <= 0) {
+            Print.imprimirConSalto("Dato invalido. Debe ser un decimal positivo.");
+            numero = leerDecimal(mensaje);
+        }
+        return numero;
+    }
+
+    public String leerTextoNoVacio(String mensaje) {
+        String texto = leerLinea(mensaje);
+        while (texto.length() == 0) {
+            Print.imprimirConSalto("Dato invalido. El texto no puede estar vacio.");
+            texto = leerLinea(mensaje);
+        }
+        return texto;
+    }
+
+    // ---------------------------------------------------------------
+    // A partir de aqui: metodos static originales (compatibilidad total)
+    // ---------------------------------------------------------------
+
+    public static int nextInt(String mensaje) {
+        // [Ref #1] trim() y parseInt() nativos reemplazan a mis metodos manuales (siguen disponibles abajo)
+        String texto = nextLine(mensaje).trim();
+        while (!esEnteroValido(texto)) {
+            Print.imprimirConSalto("Dato invalido. Debe ingresar un numero entero.");
+            texto = nextLine(mensaje).trim();
+        }
+        int numero = Integer.parseInt(texto);
         return numero;
     }
 
     public static double nextDouble(String mensaje) {
-        String texto = quitarEspaciosExtremos(nextLine(mensaje));
+        // [Ref #1] trim() y parseDouble() nativos; replace(',', '.') da compatibilidad con coma decimal
+        String texto = nextLine(mensaje).trim();
         while (!esDecimalValido(texto)) {
             Print.imprimirConSalto("Dato invalido. Debe ingresar un numero decimal (ejemplo: 12.5 o 12,5).");
-            texto = quitarEspaciosExtremos(nextLine(mensaje));
+            texto = nextLine(mensaje).trim();
         }
-        double numero = convertirTextoADecimal(texto);
+        double numero = Double.parseDouble(texto.replace(',', '.'));
         return numero;
     }
 
