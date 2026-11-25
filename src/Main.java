@@ -1,5 +1,8 @@
+import java.util.*;
+
 public class Main {
     public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
 
         /*
         String testMessage = " Hola me llamo Sebastian ".trim().replaceFirst(" ", ", ");
@@ -9,7 +12,8 @@ public class Main {
         System.out.println(testMessage);
         */
         final String NAME = "Sebastian", SURNAME = "Moreno";
-        int age = 27;
+        System.out.print("Ingresar edad: ");
+        int age = sc.nextInt();
         double heigth = 1.75;
         boolean ofAge = age >= 18;
 
